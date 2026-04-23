@@ -4,7 +4,7 @@ Personal portfolio website for **Shahid Ahmad** — Digital Marketing Executive 
 
 ---
 
-## 🌐 Live Preview
+## 🌐 Live Preview https://shahidahmadmir79-max.github.io/marketing_by_shahid/
 
 > Deploy to GitHub Pages, Netlify, or Vercel and paste your URL here.
 
