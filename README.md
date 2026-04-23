@@ -1,6 +1,6 @@
 # Marketing by Shahid
 
-Personal portfolio website for **Shahid Ahmad** — Digital Marketing Executive based in Srinagar, Jammu & Kashmir, India.
+Personal portfolio website for **Shahid Ahmad** — Digital Marketing Executive based in Srinagar.
 
 ---
 
