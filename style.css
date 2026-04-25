@@ -69,11 +69,12 @@ nav.sc{
 .logo{
   text-decoration:none;display:flex;align-items:center;gap:.6rem;
 }
-.logo-icon{
-  width:32px;height:32px;
-  background:var(--grad);
-  border-radius:8px;display:flex;align-items:center;
-  justify-content:center;font-weight:900;font-size:.95rem;color:#fff;
+.logo-img{
+  width:36px;height:36px;border-radius:50%;
+  object-fit:cover;object-position:top center;
+  border:2px solid transparent;
+  outline:2px solid rgba(238,42,123,.6);
+  outline-offset:1px;
   flex-shrink:0;
 }
 .logo-text{
