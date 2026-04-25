@@ -47,7 +47,7 @@ const obs = new IntersectionObserver(entries => {
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-// CONTACT FORM
+// CONTACT FORM — Web3Forms
 const form = document.getElementById('contact-form');
 if (form) {
   form.addEventListener('submit', async e => {
@@ -57,21 +57,37 @@ if (form) {
     const sending = btn.querySelector('.btn-sending');
     const success = document.getElementById('form-success');
     const error = document.getElementById('form-error');
+
     success.classList.remove('show');
     error.classList.remove('show');
     btn.disabled = true;
     label.style.display = 'none';
     sending.style.display = 'inline';
+
     try {
-      const res = await fetch(form.action, {
+      const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'fed59db1-9658-4596-a9d4-7a11e1466552',
+          subject: 'New project enquiry — Marketing by Shahid',
+          name: form.querySelector('[name="name"]').value,
+          email: form.querySelector('[name="email"]').value,
+          service: form.querySelector('[name="service"]').value,
+          message: form.querySelector('[name="message"]').value,
+        })
       });
-      if (res.ok) { success.classList.add('show'); form.reset(); }
-      else { error.classList.add('show'); }
-    } catch { error.classList.add('show'); }
-    finally {
+
+      const data = await res.json();
+      if (data.success) {
+        success.classList.add('show');
+        form.reset();
+      } else {
+        error.classList.add('show');
+      }
+    } catch {
+      error.classList.add('show');
+    } finally {
       btn.disabled = false;
       label.style.display = 'inline';
       sending.style.display = 'none';
