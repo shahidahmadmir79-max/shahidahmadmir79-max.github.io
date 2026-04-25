@@ -318,7 +318,10 @@
           <span class="grad-text">Send a message</span>
           <p>I'll get back to you within 24 hours.</p>
         </div>
-        <form id="contact-form" action="https://formspree.io/f/fed59db1-9658-4596-a9d4-7a11e1466552" method="POST">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="fed59db1-9658-4596-a9d4-7a11e1466552">
+          <input type="hidden" name="subject" value="New project enquiry — Marketing by Shahid">
+          <input type="hidden" name="redirect" value="false">
           <div class="fg">
             <label for="name">Your name</label>
             <input type="text" id="name" name="name" placeholder="Ahmed Khan" required>
